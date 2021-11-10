@@ -1,0 +1,36 @@
+form {
+  font-size: 1.3em;
+}
+
+.AddProduct {
+  margin: 60px;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 10px;
+  border-radius: 20px;
+  width: 40%;
+}
+.AddProduct input {
+  width: 300px;
+  margin: 10px 0;
+  border-radius: 20px;
+  text-align: center;
+}
+.AddProduct textarea {
+  width: 300px;
+  border-radius: 20px;
+  text-align: center;
+}
+.AddServiceHeader {
+  border: 2px solid green;
+  width: 40%;
+  border-radius: 40px;
+  color: white;
+  background-color: rgb(48, 48, 48);
+}
+.AddService-container{
+  background-image: url(../../images/Background.jpg);
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}

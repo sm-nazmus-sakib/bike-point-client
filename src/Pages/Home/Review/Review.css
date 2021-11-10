@@ -1,0 +1,11 @@
+.Review-header {
+  border: 2px solid green;
+  width: 40%;
+  border-radius: 40px;
+  color: white;
+  background-color: rgb(48, 48, 48);
+}
+.Reviewer-img {
+  border-radius: 140px;
+  margin-top: 20px;
+}

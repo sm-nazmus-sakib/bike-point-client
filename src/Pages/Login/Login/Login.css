@@ -1,0 +1,9 @@
+.Login-container{
+    background-image: url(../../../images/Background.jpg);
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+
+  }
