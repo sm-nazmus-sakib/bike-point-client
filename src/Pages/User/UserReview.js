@@ -8,7 +8,7 @@ const UserReview = () => {
  
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:5000/reviews", data)
+      .post("https://young-basin-54611.herokuapp.com/reviews", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Successfully post your Review");
