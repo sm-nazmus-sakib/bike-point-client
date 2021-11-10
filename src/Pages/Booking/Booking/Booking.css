@@ -1,39 +1,12 @@
-.card-footer {
-  background-color: white;
-  border-color: white;
-}
-.card {
+.contact1-form input {
+  margin-top: 15px;
   border-radius: 10px;
-}
-.Booking-header {
-  border: 2px solid green;
-  width: 40%;
-  border-radius: 40px;
-  color: white;
-  background-color: rgb(48, 48, 48);
-}
-
-form {
-  font-size: 1.3em;
-}
-
-.Confiramtion {
-  margin: 60px;
   padding: 10px;
-  width: 100%;
-}
-.Confiramtion input {
-  width: 300px;
-  margin: 10px 0;
-  border-radius: 20px;
   text-align: center;
 }
-.Confiramtion textarea {
-  width: 300px;
-  border-radius: 20px;
-  text-align: center;
-}
-.BookingBanner{
-  height: 300px;
+.booking-container {
+  background-image: url(../../../images/Background.jpg);
   width: 100%;
+  background-size: cover;
+  background-position: center;
 }

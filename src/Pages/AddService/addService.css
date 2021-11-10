@@ -27,10 +27,9 @@ form {
   color: white;
   background-color: rgb(48, 48, 48);
 }
-.AddService-container{
+.AddService-container {
   background-image: url(../../images/Background.jpg);
   width: 100%;
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
 }

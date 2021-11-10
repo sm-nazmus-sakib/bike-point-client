@@ -6,7 +6,7 @@ import "./addService.css";
 const AddService = () => {
   const { register, handleSubmit, reset } = useForm();
 
-  // here Service like as a bike 
+  // here Service like as a bike
   const onSubmit = (data) => {
     axios
       .post("https://young-basin-54611.herokuapp.com/services", data)
@@ -20,8 +20,7 @@ const AddService = () => {
 
   return (
     <div className=" AddService-container p-4">
-      <h2 className="  AddServiceHeader p-3  mx-auto">
-Add A New Bike      </h2>
+      <h2 className="  AddServiceHeader p-3  mx-auto">Add A New Bike </h2>
 
       <form
         id="contact"

@@ -25,7 +25,7 @@ const Header = () => {
               width="130"
               height="60"
               className="mx-auto my-auto"
-            />{" "}
+            />
             <strong className="ms-3"></strong>
           </Navbar.Brand>
           <Navbar.Toggle />

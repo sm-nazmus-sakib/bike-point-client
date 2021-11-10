@@ -10,7 +10,7 @@ const User = () => {
 
     return (
         <div className="row user">
-            <div className="d-flex flex-column flex-shrink-0 bg-light vh-100 col-md-1 col-3">
+            <div className="d-flex flex-column flex-shrink-0 bg-light vh-700 col-md-1 col-3 pt-5 ps-2 mx-auto">
                 <ul className="nav nav-pills nav-flush flex-column mb-auto text-center">
                     <li className="nav-link active py-3 border-bottom nav-item" onClick={() => setActive('My Orders')}> <i className="fa fa-home"></i> <small>My Orders</small></li>
 

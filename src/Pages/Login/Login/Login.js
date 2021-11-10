@@ -4,6 +4,7 @@ import UseAuth from "./../../../hooks/UseAuth";
 import Logo from "../../../images/Logo.png";
 import './Login.css'
 import GoogleImage from "../../../images/Google Logo.png";
+import GitHubLogo from "../../../images/GitHubLogo.png";
 const Login = () => {
   const { signInUsingGoogle, user, setUser ,signInUsingGitHub,getPassword,getEmail,signInWithEmail, error,setError} = UseAuth();
 
@@ -102,17 +103,17 @@ console.log(user);
                 <div className=" mb-2"></div>
               </div>
               <button
-                className="Google-Login-Button me-4"
+                className=" me-4"
                 onClick={handleGoogleLogin}
               >
-                <img src={GoogleImage} alt="" width="50" height="50" />
+                <img src={GoogleImage} className="Login-Btn" alt="" width="50" height="50" />
               </button>
 
               <button
-                className="Google-Login-Button me-4"
+                className=" me-4"
                 onClick={handleGitHubLogin}
               >
-                <img src={GoogleImage} alt="" width="50" height="50" />
+                <img src={GitHubLogo} className="Login-Btn" alt="" width="50" height="50" />
               </button>
             </div>
           </div>

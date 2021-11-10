@@ -1,4 +1,14 @@
-import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut, GithubAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  onAuthStateChanged,
+  signOut,
+  GithubAuthProvider,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { useState, useEffect } from "react";
 import initializeAuthentication from "./../Pages/Login/Firebase/firebase.init";
 
@@ -9,30 +19,29 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [error, setError] = useState("");
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const auth = getAuth();
-// Google Sign in 
+
+  // Google Sign in
   const signInUsingGoogle = () => {
     setIsLoading(true);
     const googleProvider = new GoogleAuthProvider();
-
     return signInWithPopup(auth, googleProvider).finally(() =>
       setIsLoading(false)
     );
   };
 
-  // GitHub Sign in 
+  // GitHub Sign in
   const signInUsingGitHub = () => {
     setIsLoading(true);
     const GitHubProvider = new GithubAuthProvider();
     return signInWithPopup(auth, GitHubProvider).finally(() =>
       setIsLoading(false)
-      );
+    );
   };
-
 
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
@@ -47,7 +56,7 @@ const useFirebase = () => {
   }, []);
 
 
-  // LogOut 
+  // LogOut
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
@@ -56,64 +65,50 @@ const useFirebase = () => {
   };
 
 
+  // get email
+  const getName = (event) => {
+    setName(event?.target?.value);
+  };
+  // get name
+  const getEmail = (event) => {
+    setEmail(event?.target?.value);
+  };
+  // get password
+  const getPassword = (event) => {
+    setPassword(event?.target?.value);
+  };
 
- // get email
- const getName = (event) => {
-  setName(event?.target?.value)
+  // Email  sign in
+  const signInWithEmail = (e) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
-
-}
-// get name
-const getEmail = (event) => {
-  setEmail(event?.target?.value)
-
-}
-// get password 
-const getPassword = (event) => {
-  setPassword(event?.target?.value)
-
-}
-
-
- // Email  sign in 
- const signInWithEmail = (e) => {
-
-
-
-
-  return signInWithEmailAndPassword(auth, email, password)
-
-
-}
-  // set use name
+  // set user name
   const setNameAndImage = () => {
     updateProfile(auth.currentUser, {
-        displayName: name,
-    }).then(() => {
+      displayName: name,
+    })
+      .then(() => {})
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
 
-    }).catch((error => {
-        setError(error.message)
-    }))
-}
-
-// sign up with email
-const signUp = (e) => {
-  e.preventDefault();
+  // sign up with email
+  const signUp = (e) => {
+    e.preventDefault();
 
     // setUser(email, password)
-    createUserWithEmailAndPassword(auth, email, password,)
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        setNameAndImage();
+        alert("user been created");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
 
-        .then((result) => {
-
-            setNameAndImage()
-            alert("user been created")
-        }).catch(error => {
-            setError(error.message)
-        })
-}
-
-
-  
   return {
     user,
     setUser,
@@ -121,7 +116,14 @@ const signUp = (e) => {
     signInUsingGoogle,
     logOut,
     signInUsingGitHub,
-    getPassword,getEmail,signInWithEmail, error,setError,signUp,setNameAndImage,getName
+    getPassword,
+    getEmail,
+    signInWithEmail,
+    error,
+    setError,
+    signUp,
+    setNameAndImage,
+    getName,
   };
 };
 
