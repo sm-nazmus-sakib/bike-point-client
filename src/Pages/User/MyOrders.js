@@ -40,7 +40,7 @@ const MyOrders = () => {
 
 <table role="table" style={{width: "100%"}}>
 <thead role="rowgroup" >
-    <tr role="row " className="bg-dark text-white mb-3 p-2">
+    <tr role="row " className="bg-dark text-white mb-3 p-2" style={{border: "1px solid red"}}>
       <th role="columnheader" >Product</th>
       <th role="columnheader">Price</th>
       <th role="columnheader">Status</th>
@@ -49,7 +49,7 @@ const MyOrders = () => {
   </thead>
   {orders?.map((order) => (
      <tbody role="rowgroup">
-     <tr role="row">
+     <tr role="row" style={{border: "2px solid gray"}} >
        <td role="cell">{order.name}</td>
        <td role="cell">{order.price}</td>
        <td role="cell">{order.status}</td>

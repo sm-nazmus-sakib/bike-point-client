@@ -10,12 +10,12 @@ const ManageAllOrder = () => {
   }, []);
 
   return (
-<div className="container">
+<div className="container" >
 <h2 className="  AddServiceHeader p-3  mx-auto mt-1">Total orders {orders.length} </h2>
 
 <table role="table" style={{width: "100%"}}>
-<thead role="rowgroup" >
-<tr role="row " className="bg-dark text-white mb-3 p-2">
+<thead role="rowgroup" style={{border: "1px solid red"}} >
+<tr role="row " className="bg-dark text-white mb-3 p-2" >
       <th role="columnheader" >User Email</th>
       <th role="columnheader">User Name</th>
       <th role="columnheader">Product</th>
@@ -27,8 +27,8 @@ const ManageAllOrder = () => {
     </thead>
     {orders?.map((order) => (
      <tbody role="rowgroup">
-     <tr role="row">
-       <td role="cell">{order.email}</td>
+     <tr role="row" style={{border: "2px solid gray"}} >
+       <td role="cell" >{order.email}</td>
        <td role="cell">{order.userName}</td>
       
        <td role="cell">{order.name}</td>
