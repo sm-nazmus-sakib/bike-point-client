@@ -14,7 +14,7 @@ const Services = () => {
 const  MostDesireBikes=services.slice(0,6);
   return (
     <div id="services ">
-      <h2 className=" my-5 services-header p-3 m-3 mx-auto">
+      <h2 className=" my-5 services-header p-3 m-3 mx-auto ">
       Explore Most Desire Bikes      </h2>
 {MostDesireBikes.length===0 ? <span>   <div className=" justify-content-center w-100 d-flex">
                                 <img src={spinner} alt="" width="300" height="300"/>

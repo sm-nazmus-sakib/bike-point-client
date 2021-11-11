@@ -24,13 +24,13 @@ const Register = () => {
 		
         <div className="form-group">
 			<div className="input-group">
-				<span className="input-group-addon"></span>
+				<span className="input-group-addon"><i className="fas fa-user"></i></span>
 				<input onBlur={getName}  type="text" className="form-control" name="username" placeholder="Username" id="name"/>
 			</div>
         </div>
         <div className="form-group">
 			<div className="input-group">
-				<span className="input-group-addon"></span>
+				<span className="input-group-addon"><i className="far fa-envelope"></i></span>
 				<input  onBlur={getEmail}  type="email" className="form-control" name="email" placeholder="Email Address" id="email"/>
 			</div>
         </div>

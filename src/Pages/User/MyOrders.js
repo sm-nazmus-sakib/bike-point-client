@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import UseAuth from '../../hooks/UseAuth';
-
+import './MyOrders.css'
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
@@ -12,56 +12,60 @@ const MyOrders = () => {
             .then((data) => setOrders(data));
     }, [user?.email]);
 
-    console.log(orders);
+  
+    const handleDeleteUserOrder = id => {
+      const url = `https://young-basin-54611.herokuapp.com/allOrders/${id}`;
+        fetch(url, {
+            method: 'DELETE'
+  
+        })
+            .then(res => res.json())
+            .then(data => {
+             
+                if (data.deletedCount) {
+                    const remaining = orders?.filter(order => order._id !== id);
+                    setOrders(remaining);
+                    alert('Remove Your Order Successfully')
+  
+                }
+  
+            })
+  
+    }
+
     return (
-        // <div className="container text-black mt-5 mb-5" >
-        //     <div className="row row-cols-1 row-cols-md-3 g-4">
-        //         {
-        //             orders.length === 0 ?
-        //                 <div className=" justify-content-center w-100 d-flex">
-        //                     <img src="" alt="" />
-        //                 </div>
-        //                 :
-
-        //                 orders.map(orders => <div className="col" key={orders._id} >
-        //                     <div className="card custom-cart h-100 hover">
-        //                         <img src={orders.img} className="img-fluid rounded-start w-100" alt="..." />
-        //                         <div className="card-body">
-        //                             <h5 className="card-title">{orders.name}</h5>
-        //                             <p className="card-text">{orders.Description}</p>
-        //                         </div>
-        //                         <div className="card-footer  text-center">
-        //                             <h5 className="text-warning p-2">Price $: {orders.price}</h5>
-
-
-        //                         </div>
-        //                     </div>
-        //                 </div>)
-        //         }
-        //     </div>
-        // </div >
+     
         <div className="container">
 <h2 className="  AddServiceHeader p-3  mx-auto mt-1"> You Have {orders.length} Order</h2>
 
-<Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>SL</th>
-      <th>Bike Name</th>
-      <th>Bike description</th>
+<table role="table">
+<thead role="rowgroup" >
+    <tr role="row " className="bg-dark text-white mb-3 p-2">
+      <th role="columnheader" >Product</th>
+      <th role="columnheader">Price</th>
+      <th role="columnheader">Details</th>
+      <th role="columnheader">Status</th>
+      <th role="columnheader">Action</th>
     </tr>
   </thead>
-  {orders?.map((order, serialNo) => (
-    <tbody>
-      <tr>
-        <td>{serialNo+1}</td>
-        <td>{order.name}</td>
-        <td>{order.description}</td>
-     
-      </tr>
-    </tbody>
+  {orders?.map((order) => (
+     <tbody role="rowgroup">
+     <tr role="row">
+       <td role="cell">{order.name}</td>
+       <td role="cell">{order.price}</td>
+       <td role="cell">{(order.description).slice(0,200)}</td>
+       <td role="cell">{order.status}</td>
+       <td role="cell"> <button
+                      className="btn btn-danger"
+                      onClick={() => handleDeleteUserOrder(order._id)}
+                    >
+                      Delete
+                    </button></td>
+     </tr>
+     </tbody>
+  
   ))}
-</Table>
+</table>
 </div>
     );
 };

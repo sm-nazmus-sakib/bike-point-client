@@ -34,7 +34,7 @@ const AllBikes = () => {
                 />
                 <div className="card-body">
                   <h2 className="card-title text-danger">{service.name}</h2>
-                  <p className="card-text">{service.Description}</p>
+                  <p className="card-text">{(service.Description).slice(0, 300)}</p>
                 </div>
                 <div className="card-footer">
                   <small className="text-muted">

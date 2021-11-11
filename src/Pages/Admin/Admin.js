@@ -41,7 +41,7 @@ const Admin = () => {
             onClick={() => setActive("MakeAdmin")}
           >
              
-            <i className="fa fa-cog"></i> <small>Make Admin</small> 
+             <i class="fas fa-user-shield"></i> <small>Make Admin</small> 
           </li>
         </ul>
       </div>

@@ -15,19 +15,20 @@ const Contact = () => {
       <div className="row row-cols-1 row-cols-md-4  container mx-auto mb-5  mt-5 justify-content-center">
         <div className="card  h-60 shadow p-3  me-5  contact border border-light rounded">
           <h4>
-            Email Here <hr />
+        
+          <i class="fas fa-envelope"></i>  Email Here <hr />
             saikat@gmail.com
           </h4>
         </div>
         <div className="card h-60 shadow p-3  me-5 contact border border-light rounded">
           <h4>
-            Location Here <hr />
+          <i class="fas  fa-map-marker-alt"></i>  Location Here <hr />
             Dhanmondi , Dhaka-1630
           </h4>
         </div>
         <div className="card h-60 shadow p-3  me-5 contact border border-light rounded">
-          <h4>
-            Call Here <hr />
+          <h4><i class="fas fa-phone-alt"></i> 
+             Call Here <hr />
             +880196-12644444
           </h4>
         </div>

@@ -53,16 +53,16 @@ const Header = () => {
 
             {user?.email ? (
               <Button onClick={logOut} variant="light">
-                Logout
+              <i class="fas fa-sign-out-alt"></i> Logout
               </Button>
             ) : (
               <Nav.Link as={Link} to="/login">
-                <button>Login</button>
+                <button> <i class="fas fa-sign-in-alt"></i> Login</button>
               </Nav.Link>
             )}
             <Navbar.Text>
               <a href="#login" className="userName">
-                {user?.displayName}
+               {user?.displayName}  <i class="far 2x fa-user"></i>
               </a>
             </Navbar.Text>
           </Navbar.Collapse>

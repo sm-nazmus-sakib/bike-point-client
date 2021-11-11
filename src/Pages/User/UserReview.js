@@ -1,10 +1,11 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
+import UseAuth from "../../hooks/UseAuth";
 
 const UserReview = () => {
   const { register, handleSubmit, reset } = useForm();
-
+const {user}=UseAuth();
  
   const onSubmit = (data) => {
     axios
@@ -32,7 +33,8 @@ Post a Review    </h2>
             placeholder="Enter Your Name"
             type="text"
             tabindex="1"
-            required
+            required 
+            value={user.displayName}
             autofocus
             {...register("userName", { required: true, maxLength: 40 })}
           />

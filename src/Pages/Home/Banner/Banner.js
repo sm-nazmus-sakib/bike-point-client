@@ -3,6 +3,10 @@ import { Carousel } from "react-bootstrap";
 import banner1 from "../../../images/banner/Banner-1.jpg";
 import banner2 from "../../../images/banner/Banner-2.jpg";
 import banner3 from "../../../images/banner/Banner-3.jpg";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import UseAuth from "../../../hooks/UseAuth";
+import { HashLink } from "react-router-hash-link";
 
 const Banner = () => {
   return (
@@ -15,7 +19,16 @@ const Banner = () => {
             height="600"
             alt="First slide"
           />
-          <Carousel.Caption></Carousel.Caption>
+          <Carousel.Caption>
+
+
+
+
+          <Nav.Link as={HashLink} to="/allBikes">
+          <button className="btn btn-danger rounded pills"><h3>Bike Collection <i className="far fa-arrow-alt-circle-right"></i></h3></button>
+            </Nav.Link>
+           
+          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
@@ -25,7 +38,9 @@ const Banner = () => {
             alt="Second slide"
           />
 
-          <Carousel.Caption></Carousel.Caption>
+          <Carousel.Caption> <Nav.Link as={HashLink} to="/allBikes">
+          <button className="btn btn-danger rounded pills"><h3>Bike Collection <i className="far fa-arrow-alt-circle-right"></i></h3></button>
+            </Nav.Link></Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
@@ -35,7 +50,9 @@ const Banner = () => {
             alt="Third slide"
           />
 
-          <Carousel.Caption></Carousel.Caption>
+          <Carousel.Caption> <Nav.Link as={HashLink} to="/allBikes">
+          <button className="btn btn-danger rounded pills"><h3>Bike Collection <i className="far fa-arrow-alt-circle-right"></i></h3></button>
+            </Nav.Link></Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     </div>

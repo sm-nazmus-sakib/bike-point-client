@@ -46,7 +46,7 @@ console.log(user);
                     placeholder="name@example.com"
                     id="email"
                   />
-                  <label >Email address</label>
+                  <label ><i className="far fa-envelope"></i> Email address</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
@@ -55,7 +55,7 @@ console.log(user);
                     placeholder="Password"
                     id="password"  onBlur={getPassword}
                   />
-                  <label >Password</label>
+                  <label ><i className="fa fa-lock"></i> Password</label>
                 </div>
 
                 <div className="form-check mb-3">

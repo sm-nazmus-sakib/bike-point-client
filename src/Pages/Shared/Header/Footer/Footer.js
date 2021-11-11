@@ -25,7 +25,8 @@ const Footer = () => {
             <div className="col-md-5">
               <div className="right-footer-container">
                 <h3>Sign up for the newsletter</h3>
-                <input
+               
+                <input 
                   className="footer-input text-center"
                   type="text"
                   placeholder="Enter Your Email"
@@ -33,12 +34,12 @@ const Footer = () => {
                 <button className="btn btn-primary">Subscribe</button>
                 <div className="phone d-flex align-items-center justify-content-center mt-4">
                   <div>
-                    <h5>+88 01961-264444</h5>
+                    <h5><i class="fas fa-phone-alt"></i> +88 01961-264444</h5>
                   </div>
                 </div>
                 <div className="map d-flex align-items-center justify-content-center">
                   <div>
-                    <p>230 Uttara,Dhaka Bangladesh.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 230 Uttara,Dhaka Bangladesh.</p>
                   </div>
                 </div>
               </div>
