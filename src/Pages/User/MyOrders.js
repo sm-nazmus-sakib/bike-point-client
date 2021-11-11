@@ -38,12 +38,11 @@ const MyOrders = () => {
         <div className="container">
 <h2 className="  AddServiceHeader p-3  mx-auto mt-1"> You Have {orders.length} Order</h2>
 
-<table role="table">
+<table role="table" style={{width: "100%"}}>
 <thead role="rowgroup" >
     <tr role="row " className="bg-dark text-white mb-3 p-2">
       <th role="columnheader" >Product</th>
       <th role="columnheader">Price</th>
-      <th role="columnheader">Details</th>
       <th role="columnheader">Status</th>
       <th role="columnheader">Action</th>
     </tr>
@@ -53,7 +52,6 @@ const MyOrders = () => {
      <tr role="row">
        <td role="cell">{order.name}</td>
        <td role="cell">{order.price}</td>
-       <td role="cell">{(order.description).slice(0,200)}</td>
        <td role="cell">{order.status}</td>
        <td role="cell"> <button
                       className="btn btn-danger"

@@ -102,11 +102,23 @@ const useFirebase = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setNameAndImage();
+        hanldeUserInfoRegister(result.user.email);
+
         alert("user been created");
       })
       .catch((error) => {
         setError(error.message);
       });
+  };
+//Add User in DB
+  const hanldeUserInfoRegister = (email) => {
+    fetch("https://young-basin-54611.herokuapp.com/addUserInfo", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
   };
 
   return {

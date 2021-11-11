@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import spinner from '../../images/spinner.gif'
-import { Table } from "react-bootstrap";
-// import "./Review.css";
+import './ManageAllOrder.css'
 
 const ManageAllOrder = () => {
   const [orders, setOrders] = useState([]);
@@ -15,41 +13,39 @@ const ManageAllOrder = () => {
 <div className="container">
 <h2 className="  AddServiceHeader p-3  mx-auto mt-1">Total orders {orders.length} </h2>
 
-<Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>SL</th>
-      <th>Bike Name</th>
-      <th>Bike description</th>
-      <th>User Mail</th>
-      <th>Status</th>
-      <th>Action</th>
+<table role="table" style={{width: "100%"}}>
+<thead role="rowgroup" >
+<tr role="row " className="bg-dark text-white mb-3 p-2">
+      <th role="columnheader" >User Email</th>
+      <th role="columnheader">User Name</th>
+      <th role="columnheader">Product</th>
+      <th role="columnheader">Price</th>
+      <th role="columnheader">Address</th>
+      <th role="columnheader">Status</th>
+      <th role="columnheader">Action</th>
     </tr>
-  </thead>
-  {orders?.map((order, serialNo) => (
-    <tbody>
-      <tr>
-        <td>{serialNo+1}</td>
-        <td>{order.name}</td>
-        <td>{order.description}</td>
-        <td>{order.email}</td>
-        <td>
-          <form>
-            <select
-            >
-              <option value={order?.status}>{order?.status}</option>
-              <option value="approve">approve</option>
-              <option value="done">Done</option>
-            </select>
-            <input type="submit" />
-          </form>
-        </td>
-        <button className="btn bg-danger p-2">Delete</button>
-        <button className="btn bg-success p-2">Update</button>
-      </tr>
-    </tbody>
+    </thead>
+    {orders?.map((order) => (
+     <tbody role="rowgroup">
+     <tr role="row">
+       <td role="cell">{order.email}</td>
+       <td role="cell">{order.userName}</td>
+      
+       <td role="cell">{order.name}</td>
+       <td role="cell">{order.price}</td>
+       <td role="cell">{order.address}</td>
+       <td role="cell">{order.status}</td>
+       <td role="cell"> <button
+                      className="btn btn-danger"
+                      // onClick={() => ShippedOrder(order._id)}
+                    >
+                      Confirm
+                    </button></td>
+     </tr>
+     </tbody>
+  
   ))}
-</Table>
+</table>
 </div>
   );
 };
