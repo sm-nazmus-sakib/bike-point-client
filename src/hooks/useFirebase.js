@@ -55,7 +55,6 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, []);
 
-
   // LogOut
   const logOut = () => {
     setIsLoading(true);
@@ -63,7 +62,6 @@ const useFirebase = () => {
       .then(() => {})
       .finally(() => setIsLoading(false));
   };
-
 
   // get email
   const getName = (event) => {
@@ -110,9 +108,9 @@ const useFirebase = () => {
         setError(error.message);
       });
   };
-//Add User in DB
+  //Add User in DB
   const hanldeUserInfoRegister = (email) => {
-    fetch("https://young-basin-54611.herokuapp.com/addUserInfo", {
+    fetch("http://localhost:5000/addUserInfo", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email }),
@@ -120,6 +118,22 @@ const useFirebase = () => {
       .then((res) => res.json())
       .then((result) => console.log(result));
   };
+
+  //Admin
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+      .then((res) => res.json())
+
+      .then((data) => {
+      
+        if (data[0]?.role === "admin") {
+          setIsAdmin(true);
+        } else {
+          setIsAdmin(false);
+        }
+      });
+  }, [user?.email]);
 
   return {
     user,
@@ -136,6 +150,8 @@ const useFirebase = () => {
     signUp,
     setNameAndImage,
     getName,
+    isAdmin,
+    hanldeUserInfoRegister,
   };
 };
 

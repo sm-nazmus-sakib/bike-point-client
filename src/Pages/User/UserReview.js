@@ -9,7 +9,7 @@ const {user}=UseAuth();
  
   const onSubmit = (data) => {
     axios
-      .post("https://young-basin-54611.herokuapp.com/reviews", data)
+      .post("http://localhost:5000/reviews", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Successfully post your Review");
@@ -32,17 +32,14 @@ Post a Review    </h2>
           <input
             placeholder="Enter Your Name"
             type="text"
-            tabindex="1"
             required 
             value={user.displayName}
-            autofocus
             {...register("userName", { required: true, maxLength: 40 })}
           />
         </fieldset>
         <fieldset>
           <textarea
             placeholder="Your Review...."
-            tabindex="5"
             required
             {...register("Review")}
           ></textarea>
@@ -52,9 +49,16 @@ Post a Review    </h2>
           <input
             placeholder=" Image URL"
             type="text"
-            tabindex="4"
             required
             {...register("Img")}
+          />
+        </fieldset>
+        <fieldset>
+          <input
+            placeholder=" Star Rating Between 1 to 5"
+            type="number"
+            required
+            {...register("Rating")}
           />
         </fieldset>
 

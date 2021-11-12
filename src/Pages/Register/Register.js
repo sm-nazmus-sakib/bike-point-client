@@ -6,7 +6,7 @@ import Logo from "../../images/Logo.png";
 
 import './Register.css'
 const Register = () => {
-    const { signUp, getEmail, getPassword, getName, error, signInWithGoogle, signInWithGitHub } = UseAuth();
+    const { signUp, getEmail, getPassword, getName, error } = UseAuth();
 
 	
     return (

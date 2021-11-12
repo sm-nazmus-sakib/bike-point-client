@@ -3,9 +3,8 @@ import { Carousel } from "react-bootstrap";
 import banner1 from "../../../images/banner/Banner-1.jpg";
 import banner2 from "../../../images/banner/Banner-2.jpg";
 import banner3 from "../../../images/banner/Banner-3.jpg";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import UseAuth from "../../../hooks/UseAuth";
+import {  Nav,  } from "react-bootstrap";
+
 import { HashLink } from "react-router-hash-link";
 
 const Banner = () => {

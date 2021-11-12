@@ -6,7 +6,7 @@ import './Login.css'
 import GoogleImage from "../../../images/Google Logo.png";
 import GitHubLogo from "../../../images/GitHubLogo.png";
 const Login = () => {
-  const { signInUsingGoogle, user, setUser ,signInUsingGitHub,getPassword,getEmail,signInWithEmail, error,setError} = UseAuth();
+  const { signInUsingGoogle, setUser ,signInUsingGitHub,getPassword,getEmail,signInWithEmail, error,setError} = UseAuth();
 
   
   const location = useLocation();
@@ -23,7 +23,6 @@ const Login = () => {
       history.push(redirect);
     });
   };
-console.log(user);
 
   return (
     <div className="Login-container ">

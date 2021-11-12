@@ -7,7 +7,7 @@ import Logo from "../../../images/Logo.png";
 import "./Header.css";
 
 const Header = () => {
-  const { user, logOut } = UseAuth();
+  const { user, logOut ,isAdmin } = UseAuth();
   return (
     <div className="header">
       <Navbar
@@ -33,6 +33,12 @@ const Header = () => {
             <Nav.Link as={HashLink} to="/home#home">
               <button>Home</button>
             </Nav.Link>
+
+        
+
+<Nav.Link as={HashLink} to="/About">
+              <button>About</button>
+            </Nav.Link>
           
            
             <Nav.Link as={HashLink} to="/allBikes">
@@ -44,25 +50,25 @@ const Header = () => {
             </Nav.Link>
 
 
-         { user.uid ==='rUc3A2G17EWaldboyNNDMQl13Jp1' ? (<Nav.Link as={Link} to="/Admin">
+         { isAdmin ? (<Nav.Link as={Link} to="/Admin">
                 <button>Dashboard</button>
               </Nav.Link>) : (<Nav.Link as={Link} to="/User">
                 <button>Dashboard</button>
               </Nav.Link>)}
 
 
-            {user?.email ? (
+            {user?.displayName ? (
               <Button onClick={logOut} variant="light">
-              <i class="fas fa-sign-out-alt"></i> Logout
+              <i className="fas fa-sign-out-alt"></i> Logout
               </Button>
             ) : (
               <Nav.Link as={Link} to="/login">
-                <button> <i class="fas fa-sign-in-alt"></i> Login</button>
+                <button> <i className="fas fa-sign-in-alt"></i> Login</button>
               </Nav.Link>
             )}
             <Navbar.Text>
               <a href="#login" className="userName">
-               {user?.displayName}  <i class="far 2x fa-user"></i>
+               {user?.displayName}  <i className="far 2x fa-user"></i>
               </a>
             </Navbar.Text>
           </Navbar.Collapse>

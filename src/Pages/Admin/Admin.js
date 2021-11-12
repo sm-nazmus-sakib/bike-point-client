@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import AddService from "../AddService/AddService";
 import ManageServices from "../ManageServices/ManageServices";
-import MakeAdmin from "./MakeAdmin";
 import ManageAllOrder from "./ManageAllOrder";
+import MakeAdmin from "./MakeAdmin";
 
 const Admin = () => {
   const [active, setActive] = useState("ManageAllOrder");
@@ -41,7 +41,7 @@ const Admin = () => {
             onClick={() => setActive("MakeAdmin")}
           >
              
-             <i class="fas fa-user-shield"></i> <small>Make Admin</small> 
+             <i className="fas fa-user-shield"></i> <small>Make Admin</small> 
           </li>
         </ul>
       </div>

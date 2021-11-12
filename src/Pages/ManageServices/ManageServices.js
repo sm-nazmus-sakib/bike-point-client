@@ -6,20 +6,19 @@ const ManageServices = () => {
  
   const [services, setServices] = useState([])
   useEffect(() => {
-      fetch('https://young-basin-54611.herokuapp.com/services')
+      fetch('http://localhost:5000/services')
           .then(res => res.json())
           .then(data => setServices(data))
   }, [])
 
   const handleDelete = id => {
-    const url = `https://young-basin-54611.herokuapp.com/services/${id}`;
+    const url = `http://localhost:5000/services/${id}`;
       fetch(url, {
           method: 'DELETE'
 
       })
           .then(res => res.json())
           .then(data => {
-              console.log(data)
               if (data.deletedCount) {
                   const remaining = services?.filter(service => service._id !== id);
                   setServices(remaining);

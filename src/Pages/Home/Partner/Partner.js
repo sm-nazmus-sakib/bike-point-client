@@ -1,8 +1,8 @@
 import React from "react";
 import "./Partner.css";
-import partner1 from "../../../images/Partner/basis.png";
-import partner2 from "../../../images/Partner/bimanbd.png";
-import partner3 from "../../../images/Partner/iata-logo.png";
+import partner1 from "../../../images/Partner/Daraz.png";
+import partner2 from "../../../images/Partner/Pathao.png";
+import partner3 from "../../../images/Partner/FoodPanda.png";
 const Partner = () => {
   return (
     <div>
@@ -15,18 +15,18 @@ const Partner = () => {
           <div className="row row-cols-1 row-cols-md-3 ">
             <div className="  mx-auto col">
               <div className="">
-                <img src={partner1} />
+                <img src={partner1} alt="" />
               </div>
             </div>
 
             <div className="  mx-auto col ">
               <div className="">
-                <img src={partner2} />
+                <img src={partner2} alt=""  />
               </div>
             </div>
             <div className="  mx-auto col ">
               <div className="">
-                <img src={partner3} />
+                <img src={partner3} alt="" />
               </div>
             </div>
           </div>

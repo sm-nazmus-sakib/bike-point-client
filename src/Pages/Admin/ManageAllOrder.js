@@ -4,13 +4,13 @@ import './ManageAllOrder.css'
 const ManageAllOrder = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch("https://young-basin-54611.herokuapp.com/allOrders")
+    fetch("http://localhost:5000/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   return (
-<div className="container" >
+<div className="container manage-all-order-container" >
 <h2 className="  AddServiceHeader p-3  mx-auto mt-1">Total orders {orders.length} </h2>
 
 <table role="table" style={{width: "100%"}}>
@@ -26,7 +26,7 @@ const ManageAllOrder = () => {
     </tr>
     </thead>
     {orders?.map((order) => (
-     <tbody role="rowgroup">
+     <tbody role="rowgroup" key={order._id}>
      <tr role="row" style={{border: "2px solid gray"}} >
        <td role="cell" >{order.email}</td>
        <td role="cell">{order.userName}</td>

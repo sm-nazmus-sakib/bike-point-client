@@ -4,7 +4,7 @@
 @media only screen and (max-width: 760px),
   (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Force table to not be like tables anymore */
-  table,
+  .manage-all-order-container table,
   thead,
   tbody,
   th,
@@ -14,21 +14,21 @@
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr {
+  .manage-all-order-container  thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  tr {
+  .manage-all-order-container  tr {
     margin: 0 0 1rem 0;
   }
 
-  tr:nth-child(odd) {
+  .manage-all-order-container  tr:nth-child(odd) {
     background: #ccc;
   }
 
-  td {
+  .manage-all-order-container  td {
     /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid #eee;
@@ -36,7 +36,7 @@
     padding-left: 50%;
   }
 
-  td:before {
+  .manage-all-order-container  td:before {
     /* Now like a table header */
     position: absolute;
     /* Top/left values mimic padding */
@@ -47,25 +47,25 @@
     white-space: nowrap;
   }
 
-  td:nth-of-type(1):before {
+  .manage-all-order-container  td:nth-of-type(1):before {
     content: "User Email";
   }
-  td:nth-of-type(2):before {
+  .manage-all-order-container > td:nth-of-type(2):before {
     content: "User Name";
   }
-  td:nth-of-type(3):before {
+  .manage-all-order-container  td:nth-of-type(3):before {
     content: "Product";
   }
-  td:nth-of-type(4):before {
+  .manage-all-order-container  td:nth-of-type(4):before {
     content: "Price";
   }
-  td:nth-of-type(5):before {
+  .manage-all-order-container  td:nth-of-type(5):before {
     content: "Address";
   }
-  td:nth-of-type(6):before {
+  .manage-all-order-container  td:nth-of-type(6):before {
     content: "Status";
   }
-  td:nth-of-type(7):before {
+  .manage-all-order-container  td:nth-of-type(7):before {
     content: "Action";
   }
 }

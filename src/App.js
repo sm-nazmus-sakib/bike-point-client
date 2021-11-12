@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from "./Pages/NotFound/NotFound";
 import Booking from "./Pages/Booking/Booking/Booking";
 import Login from "./Pages/Login/Login/Login";
+
 import Header from "./Pages/Shared/Header/Header";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AddService from "./Pages/AddService/AddService";
@@ -16,6 +17,8 @@ import Register from "./Pages/Register/Register";
 import Admin from "./Pages/Admin/Admin";
 import User from "./Pages/User/User";
 import AllBikes from "./Pages/All Bikes/AllBikes";
+import React from "react";
+import AdminPrivateRoute from "./AdminPriveRoute/AdminPrivateRoute";
 
 function App() {
   return (
@@ -46,9 +49,9 @@ function App() {
               <Register></Register>
             </Route>
            
-            <PrivateRoute path="/Admin">
+            <AdminPrivateRoute path="/Admin">Register
               <Admin></Admin>
-            </PrivateRoute>
+            </AdminPrivateRoute>
             <PrivateRoute path="/User">
               <User></User>
             </PrivateRoute>

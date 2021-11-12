@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AllBikes = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://young-basin-54611.herokuapp.com/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

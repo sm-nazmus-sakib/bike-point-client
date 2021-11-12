@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./Booking.css";
 import UseAuth from "../../../hooks/UseAuth";
-import BookingBanner from "../../../images/BookingBanner.jpg";
 import { useForm } from "react-hook-form";
 
 const Booking = () => {
@@ -11,7 +10,7 @@ const Booking = () => {
   const { user } = UseAuth();
 
   useEffect(() => {
-    fetch(`https://young-basin-54611.herokuapp.com/services/${serviceId}`)
+    fetch(`http://localhost:5000/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [serviceId]);
@@ -23,7 +22,7 @@ const Booking = () => {
     data.email = user.email;
     data.status = 'Pending';
 
-    fetch(`https://young-basin-54611.herokuapp.com/addOrders`, {
+    fetch(`http://localhost:5000/addOrders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -9,10 +9,10 @@ const AddService = () => {
   // here Service like as a bike
   const onSubmit = (data) => {
     axios
-      .post("https://young-basin-54611.herokuapp.com/services", data)
+      .post("http://localhost:5000/services", data)
       .then((res) => {
         if (res.data.insertedId) {
-          alert("Successfully Add This Product");
+          alert("Successfully Added New Bike");
           reset();
         }
       });
@@ -31,16 +31,14 @@ const AddService = () => {
           <input
             placeholder="Enter Bike Name"
             type="text"
-            tabindex="1"
             required
-            autofocus
+            
             {...register("name", { required: true, maxLength: 40 })}
           />
         </fieldset>
         <fieldset>
           <textarea
             placeholder="Enter Bike Details...."
-            tabindex="5"
             required
             {...register("Description")}
           ></textarea>
@@ -49,7 +47,6 @@ const AddService = () => {
           <input
             placeholder="Price"
             type="number"
-            tabindex="1"
             required
             {...register("price")}
           />
@@ -58,7 +55,6 @@ const AddService = () => {
           <input
             placeholder="Bike Image URL"
             type="text"
-            tabindex="4"
             required
             {...register("Img")}
           />

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
 import UseAuth from '../../hooks/UseAuth';
 import './MyOrders.css'
 
@@ -7,14 +6,14 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([])
     const { user } = UseAuth()
     useEffect(() => {
-        fetch(`https://young-basin-54611.herokuapp.com/myOrder/${user?.email}`)
+        fetch(`http://localhost:5000/myOrder/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [user?.email]);
 
   
     const handleDeleteUserOrder = id => {
-      const url = `https://young-basin-54611.herokuapp.com/allOrders/${id}`;
+      const url = `http://localhost:5000/allOrders/${id}`;
         fetch(url, {
             method: 'DELETE'
   
@@ -35,7 +34,7 @@ const MyOrders = () => {
 
     return (
      
-        <div className="container">
+        <div className="container my-order-container">
 <h2 className="  AddServiceHeader p-3  mx-auto mt-1"> You Have {orders.length} Order</h2>
 
 <table role="table" style={{width: "100%"}}>
