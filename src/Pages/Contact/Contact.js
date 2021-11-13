@@ -36,11 +36,11 @@ const Contact = () => {
 
       {/* Contact Information End    */}
 
-      {/*FAQ Start    */}
+      {/*Tips Start    */}
 
       <div className="container">
         <h2 className=" my-5 contact-header p-3 m-3 mx-auto">
-        Frequently Asked Questions
+        Quick Tips
         </h2>
 
         <div className="container d-lg-flex">
@@ -128,7 +128,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      {/*FAQ End    */}
+      {/*tips End    */}
     </div>
   );
 };

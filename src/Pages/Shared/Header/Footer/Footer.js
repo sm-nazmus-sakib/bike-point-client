@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="left-container text-center">
-                <img src={Logo} alt="" width="100" height="100" />
+                <img src={Logo} alt="" width="250" height="100" />
                 <h3>Bike Sales BD</h3>
 
                 <p className="mt-4 ">

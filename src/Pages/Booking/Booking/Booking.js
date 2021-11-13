@@ -78,7 +78,7 @@ const Booking = () => {
 <div className="wrap-input1 validate-input" data-validate="Name is required">
     <input className="input1" type="number" placeholder="Please Provide your Number" {...register("address", { required: true, })} />
 </div>
-
+<small className="text-danger"> <b>Use Tab to Go Submit</b> </small>
 <div className="container-contact1-form-btn">
 <button type="submit" className="contact1-form-btn btn-primary rounded m-4 p-1">
               <span>
@@ -88,6 +88,7 @@ const Booking = () => {
             </button>
 </div>
 </form>
+
       </div>
     </div>
   );

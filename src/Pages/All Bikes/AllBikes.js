@@ -43,7 +43,7 @@ const AllBikes = () => {
                     </h4>{" "}
                     <Link to={`/booking/${service._id}`}>
                       <button className="btn btn-danger mb-3">
-                        Order Bike
+                      <i class="fas fa-cart-plus"></i> Order Bike 
                       </button>
                     </Link>
                   </small>

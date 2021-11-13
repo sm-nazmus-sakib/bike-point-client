@@ -21,7 +21,7 @@ const Login = () => {
           <div className="card border-0 shadow rounded-3 my-5 mx-auto">
             <div className="card-body p-4 p-sm-5">
               <h4 className="card-title text-center mb-5 fw-light fs-5 ">
-                <img src={Logo} width="100" height="100" alt="" /> <br />
+                <img src={Logo} width="300" height="150" alt="" /> <br />
                 <b className="h3 text-danger">
                   Sign In Bike Sales BD
                 </b>

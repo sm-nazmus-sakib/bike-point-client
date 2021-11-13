@@ -51,10 +51,10 @@ const Header = () => {
 
 
             <Nav.Link as={HashLink} to="/User">
-              <button>Customer Dashboard</button>
+              <button><i class="fas fa-users"></i> Customer Dashboard</button>
             </Nav.Link>
            { isAdmin && <Nav.Link as={HashLink} to="/Admin">
-              <button>Admin Dashboard</button>
+              <button><i class="fas fa-user-shield"></i> Admin Dashboard</button>
             </Nav.Link>}
 
      

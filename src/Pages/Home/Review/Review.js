@@ -31,9 +31,9 @@ const Review = () => {
                   <p> {(review?.Review).slice(0, 200)}</p>
                   <img src={review?.Img} alt="" width="250" height="200" />
 
-                  <p>
-                    <b>Rating : {review?.Rating}</b>{" "}
-                  </p>
+                  <h5 className="mt-3">
+                    <b>Rating : {review?.Rating}<i className="fas fa-star" style={{color: 'yellow'}}> </i></b>{" "}
+                  </h5>
                  
 
 

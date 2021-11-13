@@ -15,7 +15,7 @@ const Register = () => {
 <div className="signup-form">	
     <form  >
 	<h4 className="card-title text-center mb-5 fw-light fs-5 ">
-                <img src={Logo} width="100" height="100" alt="" /> <br />
+                <img src={Logo} width="300" height="100" alt="" /> <br />
                 <b className="h3 text-danger">
                   Sign In Bike Sales BD
                 </b>
