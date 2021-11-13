@@ -6,13 +6,13 @@ const ManageAllOrder = () => {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://young-basin-54611.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handleUpdate = (id) => {
-    fetch(`http://localhost:5000/statusUpdate/${id}`, {
+    fetch(`https://young-basin-54611.herokuapp.com/statusUpdate/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),

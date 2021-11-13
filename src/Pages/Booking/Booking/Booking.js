@@ -11,7 +11,7 @@ const Booking = () => {
   const { user } = UseAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(`https://young-basin-54611.herokuapp.com/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [serviceId]);
@@ -23,7 +23,7 @@ const Booking = () => {
     data.email = user.email;
     data.status = 'Pending';
 
-    fetch(`http://localhost:5000/addOrders`, {
+    fetch(`https://young-basin-54611.herokuapp.com/addOrders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
