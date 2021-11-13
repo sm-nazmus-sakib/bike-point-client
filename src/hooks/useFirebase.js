@@ -110,7 +110,7 @@ const useFirebase = () => {
   };
   //Add User in DB
   const hanldeUserInfoRegister = (email) => {
-    fetch("http://localhost:5000/addUserInfo", {
+    fetch("https://young-basin-54611.herokuapp.com/addUserInfo", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email }),
@@ -122,7 +122,7 @@ const useFirebase = () => {
   //Admin
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+    fetch(`https://young-basin-54611.herokuapp.com/checkAdmin/${user?.email}`)
       .then((res) => res.json())
 
       .then((data) => {

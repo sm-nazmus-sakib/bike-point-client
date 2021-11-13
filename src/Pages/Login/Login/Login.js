@@ -96,24 +96,24 @@ const Login = () => {
 </b>
              </Link>
            </div>
-                <p>
+                {/* <p>
                   or <br /> Login with
-                </p>
+                </p> */}
                 <div className=" mb-2"></div>
               </div>
-              <button
+              {/* <button
                 className=" me-4"
                 onClick={handleGoogleLogin}
               >
                 <img src={GoogleImage} className="Login-Btn" alt="" width="50" height="50" />
-              </button>
+              </button> */}
 
-              <button
+              {/* <button
                 className=" me-4"
                 onClick={handleGitHubLogin}
               >
                 <img src={GitHubLogo} className="Login-Btn" alt="" width="50" height="50" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

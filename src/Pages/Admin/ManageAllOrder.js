@@ -1,13 +1,38 @@
 import React, { useEffect, useState } from "react";
 import './ManageAllOrder.css'
+import { useForm } from "react-hook-form";
 
 const ManageAllOrder = () => {
   const [orders, setOrders] = useState([]);
+  const { register, handleSubmit } = useForm();
+
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://young-basin-54611.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
+
+  const [orderId, setOrderId] = useState("");
+
+    // Status Change Shipped
+    const handleOrderId = (id) => {
+      setOrderId(id);
+      onSubmit(orderId);
+      console.log(id);
+    };
+
+
+
+    const onSubmit = (orderId) => {
+      console.log(orderId);
+      fetch(`https://young-basin-54611.herokuapp.com/allOrders/${orderId}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(),
+      })
+        .then((res) => res.json())
+        .then((result) => console.log(result));
+    };
 
   return (
 <div className="container manage-all-order-container" >
@@ -35,12 +60,18 @@ const ManageAllOrder = () => {
        <td role="cell">{order.price}</td>
        <td role="cell">{order.address}</td>
        <td role="cell">{order.status}</td>
-       <td role="cell"> <button
+       <td role="cell"> 
+       <button
                       className="btn btn-danger"
-                      // onClick={() => ShippedOrder(order._id)}
+                      onClick={() => handleOrderId(order?._id)}
+                     
                     >
                       Confirm
-                    </button></td>
+                    </button>
+               
+                  
+                    
+                    </td>
      </tr>
      </tbody>
   
@@ -59,4 +90,14 @@ export default ManageAllOrder;
 
 
 
+// <form onSubmit={handleSubmit(onSubmit)}>
+// <p
+//   onClick={() => handleOrderId(order?._id)}
+//   {...register("status")}
+// >
+//   {/* <option value={pd?.status}>{order?.status}</option> */}
+//   <button value="Shipped">Ship</button>
 
+// </p>
+// <input type="submit" />
+// </form>

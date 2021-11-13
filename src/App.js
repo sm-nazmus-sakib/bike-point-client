@@ -44,6 +44,7 @@ function App() {
             <Route path="/About">
               <About></About>
             </Route>
+           
             
             <Route path="/Register">
               <Register></Register>
