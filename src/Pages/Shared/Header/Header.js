@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import UseAuth from "../../../hooks/UseAuth";
 import { HashLink } from "react-router-hash-link";
+import UseAuth from "../../../hooks/UseAuth";
 import Logo from "../../../images/Logo.png";
 import "./Header.css";
 
@@ -50,12 +50,14 @@ const Header = () => {
             </Nav.Link>
 
 
-         { isAdmin ? (<Nav.Link as={Link} to="/Admin">
-                <button>Dashboard</button>
-              </Nav.Link>) : (<Nav.Link as={Link} to="/User">
-                <button>Dashboard</button>
-              </Nav.Link>)}
+            <Nav.Link as={HashLink} to="/User">
+              <button>Customer Dashboard</button>
+            </Nav.Link>
+           { isAdmin && <Nav.Link as={HashLink} to="/Admin">
+              <button>Admin Dashboard</button>
+            </Nav.Link>}
 
+     
 
             {user?.displayName ? (
               <Button onClick={logOut} variant="light">
@@ -63,7 +65,7 @@ const Header = () => {
               </Button>
             ) : (
               <Nav.Link as={Link} to="/login">
-                <button> <i className="fas fa-sign-in-alt"></i> Login</button>
+                <button className="btn btn-primary"> <i className="fas fa-sign-in-alt"></i> Login</button>
               </Nav.Link>
             )}
             <Navbar.Text>

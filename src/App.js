@@ -12,13 +12,13 @@ import ManageServices from "./Pages/ManageServices/ManageServices";
 import Footer from "./Pages/Shared/Header/Footer/Footer";
 import About from "./Pages/Home/About/About";
 import Contact from "./Pages/Contact/Contact";
-import AuthProvider from "./hooks/AuthProvider";
 import Register from "./Pages/Register/Register";
 import Admin from "./Pages/Admin/Admin";
 import User from "./Pages/User/User";
 import AllBikes from "./Pages/All Bikes/AllBikes";
 import React from "react";
 import AdminPrivateRoute from "./AdminPriveRoute/AdminPrivateRoute";
+import AuthProvider from "./hooks/AuthProvider";
 
 function App() {
   return (
@@ -50,10 +50,10 @@ function App() {
               <Register></Register>
             </Route>
            
-            <AdminPrivateRoute path="/Admin">Register
+            <AdminPrivateRoute exact path="/Admin">
               <Admin></Admin>
             </AdminPrivateRoute>
-            <PrivateRoute path="/User">
+            <PrivateRoute exact path="/User">
               <User></User>
             </PrivateRoute>
 

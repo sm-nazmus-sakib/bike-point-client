@@ -1,83 +1,89 @@
 import React, { useEffect, useState } from "react";
-import './ManageAllOrder.css'
-import { useForm } from "react-hook-form";
+import "./ManageAllOrder.css";
 
 const ManageAllOrder = () => {
   const [orders, setOrders] = useState([]);
-  const { register, handleSubmit } = useForm();
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch("https://young-basin-54611.herokuapp.com/allOrders")
+    fetch("http://localhost:5000/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
-  const [orderId, setOrderId] = useState("");
+  const handleUpdate = (id) => {
+    fetch(`http://localhost:5000/statusUpdate/${id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ status }),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+    alert("Successfully Update Order Status");
+  };
 
-    // Status Change Shipped
-    const handleOrderId = (id) => {
-      setOrderId(id);
-      onSubmit(orderId);
-      console.log(id);
-    };
-
-
-
-    const onSubmit = (orderId) => {
-      console.log(orderId);
-      fetch(`https://young-basin-54611.herokuapp.com/allOrders/${orderId}`, {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(),
-      })
-        .then((res) => res.json())
-        .then((result) => console.log(result));
-    };
+  const handleSelectValue = (e) => {
+    setStatus(e.target.value);
+  };
 
   return (
-<div className="container manage-all-order-container" >
-<h2 className="  AddServiceHeader p-3  mx-auto mt-1">Total orders {orders.length} </h2>
+    <div className="container manage-all-order-container">
+      <h2 className="  AddServiceHeader p-3  mx-auto mt-1">
+        Total orders {orders.length}{" "}
+      </h2>
 
-<table role="table" style={{width: "100%"}}>
-<thead role="rowgroup" style={{border: "1px solid red"}} >
-<tr role="row " className="bg-dark text-white mb-3 p-2" >
-      <th role="columnheader" >User Email</th>
-      <th role="columnheader">User Name</th>
-      <th role="columnheader">Product</th>
-      <th role="columnheader">Price</th>
-      <th role="columnheader">Address</th>
-      <th role="columnheader">Status</th>
-      <th role="columnheader">Action</th>
-    </tr>
-    </thead>
-    {orders?.map((order) => (
-     <tbody role="rowgroup" key={order._id}>
-     <tr role="row" style={{border: "2px solid gray"}} >
-       <td role="cell" >{order.email}</td>
-       <td role="cell">{order.userName}</td>
-      
-       <td role="cell">{order.name}</td>
-       <td role="cell">{order.price}</td>
-       <td role="cell">{order.address}</td>
-       <td role="cell">{order.status}</td>
-       <td role="cell"> 
-       <button
-                      className="btn btn-danger"
-                      onClick={() => handleOrderId(order?._id)}
-                     
+      <table role="table" style={{ width: "100%" }}>
+        <thead style={{ border: "1px solid red" }}>
+          <tr  className="bg-dark text-white mb-3 p-2">
+            <th role="columnheader">User Email</th>
+            <th role="columnheader">User Name</th>
+            <th role="columnheader">Product</th>
+            <th role="columnheader">Price</th>
+            <th role="columnheader">Address</th>
+            <th role="columnheader">Status</th>
+            <th role="columnheader">Action</th>
+          </tr>
+        </thead>
+        {orders?.map((order) => (
+          <tbody  key={order._id}>
+            <tr role="row" style={{ border: "2px solid gray" }}>
+              <td role="cell">{order.email}</td>
+              <td role="cell">{order.userName}</td>
+
+              <td role="cell">{order.name}</td>
+              <td role="cell">{order.price}</td>
+              <td role="cell">{order.address}</td>
+              <td role="cell">{order.status}</td>
+              <td role="cell">
+                <td>
+                  {" "}
+                  <div>
+                    <select
+                      onChange={handleSelectValue}
+                      className="pending p-2 rounded me-3"
                     >
-                      Confirm
-                    </button>
-               
-                  
-                    
-                    </td>
-     </tr>
-     </tbody>
-  
-  ))}
-</table>
-</div>
+                      <option defaultValue={order.status}>
+                        {order.status}
+                      </option>
+                      <option defaultValue="approved">Approved</option>
+                      <option defaultValue="pending">Shipped</option>
+                      <option defaultValue="pending">Cancelled</option>
+                    </select> 
+                    <button
+                    className="btn btn-danger"
+                    onClick={() => handleUpdate(order._id)}
+                  >
+                    update
+                  </button>
+                  </div>
+                 
+                </td>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+      </table>
+    </div>
   );
 };
 
@@ -90,14 +96,3 @@ export default ManageAllOrder;
 
 
 
-// <form onSubmit={handleSubmit(onSubmit)}>
-// <p
-//   onClick={() => handleOrderId(order?._id)}
-//   {...register("status")}
-// >
-//   {/* <option value={pd?.status}>{order?.status}</option> */}
-//   <button value="Shipped">Ship</button>
-
-// </p>
-// <input type="submit" />
-// </form>

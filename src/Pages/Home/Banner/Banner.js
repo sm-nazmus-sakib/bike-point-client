@@ -9,7 +9,7 @@ import { HashLink } from "react-router-hash-link";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="Banner">
       <Carousel>
         <Carousel.Item>
           <img

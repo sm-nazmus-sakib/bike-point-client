@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./Booking.css";
 import UseAuth from "../../../hooks/UseAuth";
+
 import { useForm } from "react-hook-form";
 
 const Booking = () => {
@@ -10,7 +11,7 @@ const Booking = () => {
   const { user } = UseAuth();
 
   useEffect(() => {
-    fetch(`https://young-basin-54611.herokuapp.com/services/${serviceId}`)
+    fetch(`http://localhost:5000/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [serviceId]);
@@ -22,7 +23,7 @@ const Booking = () => {
     data.email = user.email;
     data.status = 'Pending';
 
-    fetch(`https://young-basin-54611.herokuapp.com/addOrders`, {
+    fetch(`http://localhost:5000/addOrders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -51,8 +52,10 @@ const Booking = () => {
       </h2>
        
 <form onSubmit={handleSubmit(onSubmit)} className="contact1-form validate-form">
+
  <h5>User Name : {user.displayName}</h5>
  <h5>User Email : {user.email}</h5>
+
 
 <div className="wrap-input1 validate-input" data-validate="Name is required">
     {/* <input className="input1" value={selected.name} {...register("name")} /> */}

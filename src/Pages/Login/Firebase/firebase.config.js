@@ -1,4 +1,6 @@
 const firebaseConfig = {
+
+
   apiKey: "AIzaSyCDdhnUDkQfMs668ULZ0IIbWpqdtYFvNDw",
   authDomain: "bike-sales-bd.firebaseapp.com",
   projectId: "bike-sales-bd",
@@ -8,3 +10,7 @@ const firebaseConfig = {
 };
 
 export default firebaseConfig;
+
+
+
+

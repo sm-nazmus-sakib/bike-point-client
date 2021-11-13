@@ -1,7 +1,7 @@
 import React from "react";
 import spinner from '../../../images/spinner.gif'
 import { Redirect, Route } from "react-router";
-import UseAuth from "./../../../hooks/UseAuth";
+import UseAuth from "../../../hooks/UseAuth";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading } = UseAuth();

@@ -7,7 +7,7 @@ import spinner from '../../../images/spinner.gif'
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://young-basin-54611.herokuapp.com/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -20,7 +20,7 @@ const  MostDesireBikes=services.slice(0,6);
                                 <img src={spinner} alt="" width="300" height="300"/>
                             </div></span>:(<div className="row row-cols-1 row-cols-md-3 m-2  ">
         {MostDesireBikes.map((service) => (
-          <Service key={service.id} service={service}></Service>
+          <Service key={service._id} service={service}></Service>
          
 
         ))}

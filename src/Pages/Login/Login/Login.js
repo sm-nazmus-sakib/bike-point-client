@@ -1,28 +1,18 @@
 import React from "react";
 import {  useLocation, useHistory ,Link} from "react-router-dom";
-import UseAuth from "./../../../hooks/UseAuth";
 import Logo from "../../../images/Logo.png";
 import './Login.css'
-import GoogleImage from "../../../images/Google Logo.png";
-import GitHubLogo from "../../../images/GitHubLogo.png";
+
+import UseAuth from "../../../hooks/UseAuth";
 const Login = () => {
-  const { signInUsingGoogle, setUser ,signInUsingGitHub,getPassword,getEmail,signInWithEmail, error,setError} = UseAuth();
+  const {  setUser ,getPassword,getEmail,signInWithEmail, error,setError} = UseAuth();
 
   
   const location = useLocation();
   const history = useHistory();
   const redirect = location.state?.from || "/Home";
 
-  const handleGoogleLogin = () => {
-    signInUsingGoogle().then((result) => {
-      history.push(redirect);
-    });
-  };
-  const handleGitHubLogin = () => {
-    signInUsingGitHub().then((result) => {
-      history.push(redirect);
-    });
-  };
+
 
   return (
     <div className="Login-container ">
@@ -96,24 +86,9 @@ const Login = () => {
 </b>
              </Link>
            </div>
-                {/* <p>
-                  or <br /> Login with
-                </p> */}
+               
                 <div className=" mb-2"></div>
               </div>
-              {/* <button
-                className=" me-4"
-                onClick={handleGoogleLogin}
-              >
-                <img src={GoogleImage} className="Login-Btn" alt="" width="50" height="50" />
-              </button> */}
-
-              {/* <button
-                className=" me-4"
-                onClick={handleGitHubLogin}
-              >
-                <img src={GitHubLogo} className="Login-Btn" alt="" width="50" height="50" />
-              </button> */}
             </div>
           </div>
         </div>
