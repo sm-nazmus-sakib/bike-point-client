@@ -29,7 +29,7 @@ const ManageAllOrder = () => {
   return (
     <div className="container manage-all-order-container">
       <h2 className="  AddServiceHeader p-3  mx-auto mt-1">
-        Total orders {orders.length}{" "}
+        Total orders {orders.length} 
       </h2>
 
       <table role="table" style={{ width: "100%" }}>
@@ -56,7 +56,7 @@ const ManageAllOrder = () => {
               <td role="cell">{order.status}</td>
               <td role="cell">
                 <td>
-                  {" "}
+                   
                   <div>
                     <select
                       onChange={handleSelectValue}

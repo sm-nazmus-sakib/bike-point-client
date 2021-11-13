@@ -21,7 +21,7 @@ const Service = ({ service }) => {
         </div>
         <div className="card-footer">
           <small className="text-muted">
-            <h4 className="text-primary mt-1 mb-5">Price: ${price}</h4>{" "}
+            <h4 className="text-primary mt-1 mb-5">Price: ${price}</h4> 
             <Link to={`/booking/${_id}`}>
               <button className="btn btn-danger mb-3"> <i className="fas fa-shopping-cart"></i> Order Bike </button>
             </Link>

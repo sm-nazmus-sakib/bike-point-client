@@ -52,7 +52,7 @@ Our Bike Collection      </h2>
                 <small className="text-muted">
                   <h4 className="text-primary mt-1 mb-5">
                     Price: {service.price}
-                  </h4>{" "}
+                  </h4> 
                   <small className="text-muted">
                     <button
                       className="btn btn-danger"

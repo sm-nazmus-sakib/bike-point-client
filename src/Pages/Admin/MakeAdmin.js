@@ -24,8 +24,8 @@ const MakeAdmin = () => {
   return (
     <div className="makeAdmin">
       <h2 className=" my-5 services-header p-3 m-3 mx-auto">
-        Add A New Admin{" "}
-      </h2>{" "}
+        Add A New Admin 
+      </h2> 
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           className="input-field make-admin-input"

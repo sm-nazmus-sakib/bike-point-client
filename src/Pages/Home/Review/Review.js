@@ -13,7 +13,7 @@ const Review = () => {
   return (
     <div>
       <h2 className="  AddServiceHeader p-3  mx-auto mt-1 mb-3">
-        {" "}
+         
         Happy Clients Says
       </h2>
 
@@ -32,7 +32,7 @@ const Review = () => {
                   <img src={review?.Img} alt="" width="250" height="200" />
 
                   <h5 className="mt-3">
-                    <b>Rating : {review?.Rating}<i className="fas fa-star" style={{color: 'yellow'}}> </i></b>{" "}
+                    <b>Rating : {review?.Rating}<i className="fas fa-star" style={{color: 'yellow'}}> </i></b> 
                   </h5>
                  
 
