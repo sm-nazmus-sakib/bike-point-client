@@ -8,8 +8,10 @@ import Service5 from '../../../images/Service5.jpg';
 const Decoration = () => {
     return (
         <div className="container my-5">
-            <h2 className="my-5 packages-header p-3 m-3 mx-auto text-center">
-      Our Services   </h2>
+            <h2 className="  AddServiceHeader p-3  mx-auto mt-1 mb-3">
+         
+Our Best Service       </h2>
+ 
 
             <div className="row">
                 <div className="col-lg-6 col-md-6 col-12">
