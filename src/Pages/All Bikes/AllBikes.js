@@ -25,7 +25,7 @@ const AllBikes = () => {
         <div className="row row-cols-1 row-cols-md-3 m-2  ">
           {services.map((service) => (
             <div className="col mb-4 " id="services" key={service._id}>
-              <div className="card h-100 ">
+              <div className="card h-100  shadow-lg p-3 mb-5 bg-body pill">
                 <img
                   src={service.Img}
                   className="card-img-top p-3 rounded"
