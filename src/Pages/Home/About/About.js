@@ -14,21 +14,19 @@ const About = () => {
           className="mb-3"
         />
       </div>
-      <h2 className=" my-5 About-header p-3 m-3 mx-auto"> About Bike Sales BD</h2>
+      <h2 className=" my-5 About-header p-3 m-3 mx-auto"> About Bike Point BD</h2>
       <div className=" mb-4 ">
         <div className="row d-flex">
           <div className="col-md-6 ">
-            <img src={ABoutImg} alt="" width="100%" />
+            <img src={ABoutImg} alt="" width="100%"/>
           </div>
           <div className="col-md-6  p-5 my-auto mx-auto">
             <h1 className="text-danger mb-2">
-              <b>Bike Sales BD</b>
+              <b>Bike Point BD</b>
             </h1>
-            <h4 className="p-4">
+            <h5 className="about-text p-4">
             carsales.com Ltd (ASX: CAR) is the largest online automotive, motorcycle and marine classifieds business in Australia. Attracting more Australians interested in buying or selling cars, motorcycles, trucks, caravans and boats than any other classified group of websites. Together with its subsidiaries employing over 600 people in Australia, carsales develops world leading technology and advertising solutions that drive its business around the world. carsales.com Ltd has operations across the Asia Pacific region and has interests in leading online automotive classified businesses in Brazil, South Korea, Malaysia, Indonesia, Thailand and Mexico.
-
-
-            </h4>
+            </h5>
           </div>
         </div>
       </div>

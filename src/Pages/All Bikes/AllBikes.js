@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 const AllBikes = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://young-basin-54611.herokuapp.com/services")
+    fetch("https://bike-point-bd-server-side.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
   return (
     <div id="services ">
       <h2 className=" my-5 services-header p-3 m-3 mx-auto">
-        All Bikes in Our Showroom 
+        All Bikes in Our Showroom
       </h2>
       {services.length === 0 ? (
         <span>
-           
+
           <div className=" justify-content-center w-100 d-flex">
             <img src={spinner} alt="" width="300" height="300" />
           </div>
@@ -40,10 +40,10 @@ const AllBikes = () => {
                   <small className="text-muted">
                     <h4 className="text-primary mt-1 mb-5">
                       Price: ${service.price}
-                    </h4> 
+                    </h4>
                     <Link to={`/booking/${service._id}`}>
                       <button className="btn btn-danger mb-3">
-                      <i class="fas fa-cart-plus"></i> Order Bike 
+                        <i class="fas fa-cart-plus"></i> Order Bike
                       </button>
                     </Link>
                   </small>

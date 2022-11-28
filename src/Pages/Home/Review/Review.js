@@ -7,15 +7,14 @@ import Rating from 'react-rating';
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://young-basin-54611.herokuapp.com/reviews")
+    fetch("https://bike-point-bd-server-side.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
 
   return (
     <div>
-      <h2 className="  AddServiceHeader p-3  mx-auto mt-1 mb-3">
-         
+      <h2 className="AddServiceHeader mx-auto mt-1 mb-3">
         Happy Clients Says
       </h2>
 
@@ -33,14 +32,14 @@ const Review = () => {
                   <p> {(review?.Review).slice(0, 200)}</p>
                   <img src={review?.Img} alt="" width="250" height="200" />
 
-                 <br /> <br />
-                  
+                  <br /> <br />
+
                   <Rating className="star"
-                                            initialRating={Number(review.Rating)}
-                                            emptySymbol="far fa-star icon-color"
-                                            fullSymbol="fas fa-star icon-color"
-                                            readonly></Rating>
-                 
+                    initialRating={Number(review.Rating)}
+                    emptySymbol="far fa-star icon-color"
+                    fullSymbol="fas fa-star icon-color"
+                    readonly></Rating>
+
 
 
 

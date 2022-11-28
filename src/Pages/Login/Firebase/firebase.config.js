@@ -1,12 +1,11 @@
 const firebaseConfig = {
-
-
-  apiKey: "AIzaSyCDdhnUDkQfMs668ULZ0IIbWpqdtYFvNDw",
-  authDomain: "bike-sales-bd.firebaseapp.com",
-  projectId: "bike-sales-bd",
-  storageBucket: "bike-sales-bd.appspot.com",
-  messagingSenderId: "163683820603",
-  appId: "1:163683820603:web:76a90d644fd924b741e81e"
+  
+  apiKey: "AIzaSyANLqPHlk8Pyr-NwcBYh4KY2ztxK-p87X0",
+  authDomain: "bike-point-bd.firebaseapp.com",
+  projectId: "bike-point-bd",
+  storageBucket: "bike-point-bd.appspot.com",
+  messagingSenderId: "661946099107",
+  appId: "1:661946099107:web:dc3674be488c86f6b1e616"
 };
 
 export default firebaseConfig;

@@ -9,10 +9,12 @@
   margin-top: 5px;
 }
 .footer-container {
-  background-color: rgb(3, 3, 36);
+  /* background-color: rgb(3, 3, 36); */
+
+  background-color:#51E1ED;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 20px;
-  color: rgb(216, 209, 209);
+  color: rgb(14, 4, 4);
 
 }

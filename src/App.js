@@ -19,6 +19,7 @@ import AllBikes from "./Pages/All Bikes/AllBikes";
 import React from "react";
 import AdminPrivateRoute from "./AdminPriveRoute/AdminPrivateRoute";
 import AuthProvider from "./hooks/AuthProvider";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
@@ -67,9 +68,14 @@ function App() {
             <Route path="/allBikes">
               <AllBikes></AllBikes>
             </Route>
-            <Route path="/Contact">
+            <Route path="/contact">
               <Contact></Contact>
             </Route>
+
+            <Route path="/blog">
+              <Blog></Blog>
+            </Route>
+
             <PrivateRoute path="/manageServices">
               <ManageServices></ManageServices>
             </PrivateRoute>

@@ -6,8 +6,8 @@ import partner3 from "../../../images/Partner/FoodPanda.png";
 const Partner = () => {
   return (
     <div>
-      <h2 className=" my-5 partner-header p-3 m-3 mx-auto">
-        Accredited Partner
+      <h2 className="my-5 partner-header m-2 mx-auto">
+      Recognized Partner
       </h2>
 
       <div className="container mt-5 text-center partner" id="Shop">

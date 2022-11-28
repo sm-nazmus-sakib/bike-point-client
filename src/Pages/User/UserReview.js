@@ -5,11 +5,11 @@ import UseAuth from "../../hooks/UseAuth";
 
 const UserReview = () => {
   const { register, handleSubmit, reset } = useForm();
-const {user}=UseAuth();
- 
+  const { user } = UseAuth();
+
   const onSubmit = (data) => {
     axios
-      .post("https://young-basin-54611.herokuapp.com/reviews", data)
+      .post("https://bike-point-bd-server-side.vercel.app/reviews", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Successfully post your Review");
@@ -21,7 +21,7 @@ const {user}=UseAuth();
   return (
     <div className=" AddService-container p-4">
       <h2 className="  AddServiceHeader p-3  mx-auto">
-Post a Review    </h2>
+        Post a Review    </h2>
 
       <form
         id="contact"
@@ -32,7 +32,7 @@ Post a Review    </h2>
           <input
             placeholder="Enter Your Name"
             type="text"
-            required 
+            required
             value={user.displayName}
             {...register("userName", { required: true, maxLength: 40 })}
           />
@@ -44,7 +44,7 @@ Post a Review    </h2>
             {...register("Review")}
           ></textarea>
         </fieldset>
-       
+
         <fieldset>
           <input
             placeholder=" Image URL"
@@ -70,7 +70,7 @@ Post a Review    </h2>
             data-submit="...Sending"
             className="btn btn-primary"
           >
-Post Review          </button>
+            Post Review          </button>
         </fieldset>
       </form>
     </div>

@@ -1,9 +1,9 @@
 .partner-header {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   width: 40%;
-  border-radius: 40px;
+  /* border-radius: 40px; */
   color: white;
-  background-color: rgb(48, 48, 48);
+  background-color: rgb(70, 46, 180);
 }
 .partner img {
   height: 140px;

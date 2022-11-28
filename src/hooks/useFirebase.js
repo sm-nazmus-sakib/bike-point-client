@@ -59,7 +59,7 @@ const useFirebase = () => {
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
-      .then(() => {})
+      .then(() => { })
       .finally(() => setIsLoading(false));
   };
 
@@ -86,7 +86,7 @@ const useFirebase = () => {
     updateProfile(auth.currentUser, {
       displayName: name,
     })
-      .then(() => {})
+      .then(() => { })
       .catch((error) => {
         setError(error.message);
       });
@@ -110,7 +110,7 @@ const useFirebase = () => {
   };
   //Add User in DB
   const hanldeUserInfoRegister = (email) => {
-    fetch("https://young-basin-54611.herokuapp.com/addUserInfo", {
+    fetch("https://bike-point-bd-server-side.vercel.app/addUserInfo", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email }),
@@ -122,11 +122,11 @@ const useFirebase = () => {
   //Admin
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
-    fetch(`https://young-basin-54611.herokuapp.com/checkAdmin/${user?.email}`)
+    fetch(`https://bike-point-bd-server-side.vercel.app/checkAdmin/${user?.email}`)
       .then((res) => res.json())
 
       .then((data) => {
-      
+
         if (data[0]?.role === "admin") {
           setIsAdmin(true);
         } else {

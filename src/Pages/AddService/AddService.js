@@ -9,7 +9,7 @@ const AddService = () => {
   // here Service like as a bike
   const onSubmit = (data) => {
     axios
-      .post("https://young-basin-54611.herokuapp.com/services", data)
+      .post("https://bike-point-bd-server-side.vercel.app/services", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Successfully Added New Bike");
@@ -32,7 +32,7 @@ const AddService = () => {
             placeholder="Enter Bike Name"
             type="text"
             required
-            
+
             {...register("name", { required: true, maxLength: 40 })}
           />
         </fieldset>

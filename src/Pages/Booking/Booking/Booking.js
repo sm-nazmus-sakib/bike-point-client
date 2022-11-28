@@ -11,7 +11,7 @@ const Booking = () => {
   const { user } = UseAuth();
 
   useEffect(() => {
-    fetch(`https://young-basin-54611.herokuapp.com/services/${serviceId}`)
+    fetch(`https://bike-point-bd-server-side.vercel.app/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [serviceId]);
@@ -23,7 +23,7 @@ const Booking = () => {
     data.email = user.email;
     data.status = "Pending";
 
-    fetch(`https://young-basin-54611.herokuapp.com/addOrders`, {
+    fetch(`https://bike-point-bd-server-side.vercel.app/addOrders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -135,8 +135,8 @@ const Booking = () => {
             />
           </div>
           <small className="text-danger">
-             
-            <b>Use Tab to Go Submit</b> 
+
+            <b>Use Tab to Go Submit</b>
           </small>
           <div className="container-contact1-form-btn">
             <button

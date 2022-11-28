@@ -8,3 +8,7 @@
 .About-Container {
   background-color: rgb(226, 250, 210);
 }
+
+.about-text{
+  text-align: justify;
+}
